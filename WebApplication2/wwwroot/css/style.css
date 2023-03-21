@@ -1,0 +1,247 @@
+﻿
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-family: "Montserrat",sans-serif;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+
+a {
+    color: grey;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+span {
+    font-size: 0.9rem;
+}
+
+
+.nav-and-userInfo {
+    width: 50%;
+    height: 100%;
+    padding: 2%;
+}
+
+.userInfo {
+    border-radius: 12px;
+    background-color: #FFFAFA;
+    width: 85%;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.user-email {
+    color: gray;
+}
+
+.user-image {
+    border: 1pc solid black;
+    background-image: url("../FileConverter/img/B.png");
+    background-size: cover;
+    width: 35%;
+    height: 5.5rem;
+    border-radius: 50%;
+}
+
+.nav {
+    border-radius: 12px;
+    width: 85%;
+    height: 350px;
+    margin-top: 8%;
+    background-color: #FFFAFA;
+    color: gray;
+}
+
+    .nav ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+        .nav ul li {
+            display: inline-block;
+            padding-left: 10px;
+            font-size: 0.9rem;
+        }
+
+            .nav ul li svg {
+                margin-right: 0.5rem;
+            }
+
+.file-converter {
+    border-radius: 12px;
+    background-color: #FFFAFA;
+    width: 100%;
+    height: 90vh;
+    margin-top: 1.6rem;
+    margin-right: 1.5rem;
+}
+
+    .file-converter nav {
+        border-radius: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+.type-conversion-title {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.conversion-parameters {
+    margin-top: 0.5rem;
+    margin-right: 1.5rem;
+}
+
+.drop-file {
+    border: 3px dashed #7994de;
+    border-radius: 12px;
+    width: 95%;
+    height: 250px;
+    margin-left: 1rem;
+    background-color: rgba(0,0,0,0);
+    transition: border-color 0.2s, background-color 0.2s;
+    background-color: #e4eaf8;
+    border-radius: 12px;
+    height: 251px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .drop-file .dragover {
+        background-color: #f5f5f5;
+        border-color: #3498db;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .drop-file svg {
+        color: #7994de
+    }
+
+    .drop-file p {
+        color: #7994de
+    }
+
+
+p.file-size-desc {
+    margin-top: .5px;
+}
+
+.drop-file button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #7994de;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.ready-file {
+    width: 95%;
+    height: 60px;
+    margin-left: 1rem;
+    margin-top: .5rem;
+    background-color: whitesmoke;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.file-name {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #222222;
+}
+
+.ready-file button {
+    padding: 10px 20px;
+    background-color: #8ea6ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.file-size {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20%;
+}
+
+
+.file-history {
+    border-radius: 12px;
+    background-color: #FFFAFA;
+    width: 40%;
+    height: 90vh;
+    margin-top: 2rem;
+    /*margin-right: 1.5rem;*/
+}
+
+.history {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .history p {
+        margin-left: 1rem;
+    }
+
+    .history svg {
+        margin-right: 1rem;
+    }
+
+.file-history span {
+    margin-left: 1rem;
+    color: grey;
+}
