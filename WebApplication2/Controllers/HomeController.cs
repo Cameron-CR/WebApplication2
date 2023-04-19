@@ -40,6 +40,18 @@ namespace WebApplication2.Controllers
                 ModelState.AddModelError("fileInput", "Please select a file.");
                 return View();
             }
+
+
+            // Check if file is a CSV file
+            if (Path.GetExtension(fileInput.FileName) != ".csv")
+            {
+            
+                ModelState.AddModelError("fileInput", "Only CSV files are allowed.");
+                
+                return View();
+            
+            }
+
             // Gets the file name and path for saving
             string fileName = Path.GetFileName(fileInput.FileName);
             string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "uploads", fileName);
@@ -55,11 +67,11 @@ namespace WebApplication2.Controllers
 
 
             //this loop looks through every element of the CSV file, and looks for EITHER: '0' or integers 1-100, and modifies the file 
-            //to reflect the rules we have established (0 == A, 1-100 = P)
+            //to reflect the rules we have established (0 == A, 1-120 = P)
 
             for (int i = 0; i < lines.Length; i++)
             {
-                lines[i] = Regex.Replace(lines[i], @"\b([1-9]|[1-9][0-9]|100)\b", "P");
+                lines[i] = Regex.Replace(lines[i], @"\b([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|120)\b", "P");
                 lines[i] = lines[i].Replace("0", "A");
             }
 
@@ -87,12 +99,12 @@ namespace WebApplication2.Controllers
       string[] lines = System.IO.File.ReadAllLines(filePath);
 
         //Redundant, but for some reason, if this is not present, the new file will not be modified, and will just download a copy of the same file. Not sure whats going on here, ChatGPT doesnt know either. 
-        // loops through file looking for either 0 or numbers 1-100, and replaces them with 'A' or 'P' respectively. 
+        // loops through file looking for either 0 or numbers 1-120, and replaces them with 'A' or 'P' respectively. 
      for (int i = 0; i < lines.Length; i++)
      {
-            lines[i] = Regex.Replace(lines[i], @"\b([1-9]|[1-9][0-9]|100)\b", "P");
-          
-            lines[i] = lines[i].Replace("0", "A");
+                lines[i] = Regex.Replace(lines[i], @"\b([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|120)\b", "P");
+
+                lines[i] = lines[i].Replace("0", "A");
      }
 
      //this creates the new file name, essentially just puts "MODIFIED" in front of the file name to make sure it is easy to find unmodified file. 
