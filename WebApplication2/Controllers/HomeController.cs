@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 
+
 namespace WebApplication2.Controllers
 {
     public class HomeController : Controller
@@ -27,8 +28,6 @@ namespace WebApplication2.Controllers
         }
 
 
-        // POST: /Home/Index
-        // Handles the file upload and modification
 
         [HttpPost]
         public IActionResult Index(IFormFile fileInput)

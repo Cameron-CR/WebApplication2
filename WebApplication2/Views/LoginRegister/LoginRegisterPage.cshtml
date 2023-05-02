@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Convert with Parameters</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+          rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/css/loginRegister.css" />
+
+</head>
+<body>
+    <!-- NAVBAR CREATION -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Help</a>
+        </nav>
+    </header>
+    <!-- LOGIN FORM CREATION -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="item">
+            <h2 class="logo">Group Three</h2>
+            <div class="text-item">
+                <h2>Welcome! <br /><span> To Our Conversion File Application </span></h2>
+                <p>
+                    Created for easy data manipulation
+                </p>
+            </div>
+        </div>
+        <div class="login-section">
+            <div class="form-box login">
+                <form action="">
+                    <h2>Sign In</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class="bx bxs-envelope"></i></span>
+                        <input type="email" id="loginEmail" required />
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="bx bxs-lock-alt"></i></span>
+                        <input type="password" id="loginPassword" required />
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-password">
+                        <label for=""><input type="checkbox" />Remember Me</label>
+                        <a href="#">Forget Password</a>
+                    </div>
+                    <button class="btn" id="loginBtn" >Login In</button>
+                    <div class="create-account">
+                        <p>
+                            Create A New Account?
+                            <a href="#" class="register-link">Sign Up</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-box register">
+                <form action="">
+                    <h2>Sign Up</h2>
+
+                    <div class="input-box">
+                        <span class="icon"><i class="bx bxs-user"></i></span>
+                        <input type="text" id="username" required />
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="bx bxs-envelope"></i></span>
+                        <input type="email"  id="email" required />
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="bx bxs-lock-alt"></i></span>
+                        <input type="password" id="password" required />
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-password">
+                        <label for=""><input type="checkbox" />I agree with this statment</label>
+                    </div>
+                    <button class="btn" id="signupBtn" >Register</button>
+                    <div class="create-account">
+                        <p>
+                            Already Have An Account?
+                            <a href="#" class="login-link">Sign In</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- SIGN UP FORM CREATION -->
+
+
+    
+</body>
+</html>
+
+

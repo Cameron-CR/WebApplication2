@@ -2,36 +2,317 @@
     ViewData["Title"] = "CSV File Converter";
 }
 
-<h1>@ViewData["Title"]</h1>
+@*<h1>@ViewData["Title"]</h1>*@
 
-<form method="post" enctype="multipart/form-data">
+@*<form method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="fileInput">Upload a CSV file:</label>
         <input type="file" class="form-control-file" id="fileInput" name="fileInput">
     </div>
     <button type="submit" class="btn btn-primary">Convert File</button>
-</form>
+</form>*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://kit.fontawesome.com/deff9e6f63.js" crossorigin="anonymous"></script>
+    <title>FConverter</title>
+</head>
+<body>
+    <main class="converter-dashboard">
+        <section class="nav-and-userInfo">
+            <div class="userInfo">
+                <div class="user-image"></div>
+                <p class="user-name"></p>
+                <span class="user-email"></span>
+            </div>
+            <div class="nav">
+                <ul>
+                    <a href="#" id="home">
+                    <li>
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.3em" width="1.3em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path>
+                        </svg>
+                        Home
+                    </li>
+                    </a>
+                    <a href="#">
+                    <li>
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1.3em" width="1.3em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 2h8a2 2 0 012 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V4a2 2 0 012-2zm0 1a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V4a1 1 0 00-1-1H3z" clip-rule="evenodd"></path><path d="M5 0h8a2 2 0 012 2v10a2 2 0 01-2 2v-1a1 1 0 001-1V2a1 1 0 00-1-1H5a1 1 0 00-1 1H3a2 2 0 012-2z"></path></svg>
+                        All Files
+                    </li>
+                    </a>
+                    <a href="#">
+                    <li>
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.3em" width="1.3em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"></path>
+                        </svg>
+                        Starred
+                    </li>
+                    </a>
+                    <a href="#">
+                    <li>
+                       
+                    </li>
+                    </a>
+
+                    <a href="#">
+                    <li>
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1.3em" width="1.3em" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                        Settings
+                    </li>
+                    </a>
+                    <a href="#">
+                    <li>
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1.3em" width="1.3em" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12" y2="17"></line>
+                        </svg>
+                        Help Center
+                    </li>
+                    </a>
+                    <a href="#" id="logout">
+                    <li>
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M16 13L16 11 7 11 7 8 2 12 7 16 7 13z"></path><path d="M20,3h-9C9.897,3,9,3.897,9,5v4h2V5h9v14h-9v-4H9v4c0,1.103,0.897,2,2,2h9c1.103,0,2-0.897,2-2V5C22,3.897,21.103,3,20,3z"></path></svg>
+                        Logout
+                    </li>
+                    
+                    </a>
+                </ul>
+            </div>
+        </section>
+        <section class="file-converter">
+            <nav>
+                <div class="type-conversion-title">
+                    <label for="file-type">Convert to:</label>
+                    <select id="file-type">
+                        <option value="csv">CSV (.csv)</option>
+                        <option value="xls">Excel (.xls)</option>
+                        <option value="xlsx">Excel (.xlsx)</option>
+                        <option value="pdf">PDF (.pdf)</option>
+                        <option value="doc">Word (.doc)</option>
+                        <option value="docx">Word (.docx)</option>
+                    </select>
+                    <label for="file-type">with Parameter Set:</label>
+                    <select id="parameter-type">
+                        
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <div class="conversion-parameters">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="#" id="viewParameters">View Parameters</a>
+                        <a href="#" id="setParameters">Add Parameters</a>
+                        <a id="convertAll" href="#">Convert All</a>
+                        <a id="deleteAll" href="#">Delete All</a>
+                    </div>
+                </div>
+
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <label for="paramName">Set Name:</label>
+                        <input type="text" id="paramName" name="paramName" value="">
+                        <div class="titleHeaders">
+                                <h3>Values</h3>
+                            <h3>to</h3>
+                            <h3>Parameters</h3>
+                            </div>
+                        <div class="parameterInputValues">    
+                            
+                        <div class="conditionalValues">
+                            <select class="conditional-type-value1">
+                                <option value="greaterThan">&gt;</option>
+                                <option value="lessThan">&lt;</option>
+                                <option value="greaterOrEqual">&ge;</option>
+                                <option value="lessOrEqual">&le;</option>
+                                <option value="equal">=</option>
+                            </select>
+
+                             <select class="conditional-type-value2">
+                                <option value="greaterThan">&gt;</option>
+                                <option value="lessThan">&lt;</option>
+                                <option value="greaterOrEqual">&ge;</option>
+                                <option value="lessOrEqual">&le;</option>
+                                <option value="equal">=</option>
+                            </select>
+                        </div>
+                        
+                        <div class="valueSets">
+                            <form>
+                                
+
+                                <label for="value1">Value 1:</label>
+                                <input type="text" id="value1" name="param1" value="">
+
+                                <label for="value2">Value 2:</label>
+                                <input type="text" id="value2" name="param2" value="">
+                            </form>
+                        </div>
+                        
+                        <div class="parameterSets">
+                        <form>
+                            
+
+                            <label for="param1">Parameter 1:</label>
+                            <input type="text" id="param1" name="param1" value="">
+
+                            <label for="param2">Parameter 2:</label>
+                            <input type="text" id="param2" name="param2" value="">
+
+                            
+                        </form>
+                            
+                        </div>
+                        
+                        </div>
+                        <input type="submit" id="saveParameters" value="Save">
+                    </div>
+
+                </div>
+
+                <div id="myModalView" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content" id="viewParameter">
+                        <span class="close">&times;</span>
+                        <label for="paramName">Set Name:</label>
+                        <select id="parameter-type-view">
+                        </select>
+                        <div class="titleHeaders">
+                            <h3>Values</h3>
+                            <h3>to</h3>
+                            <h3>Parameters</h3>
+                        </div>
+                        <div class="parameterInputValues">
+
+                            <div class="valueSets">
+                                <form>
+
+
+                                    <label for="value1">Value 1:</label>
+                                    <input type="text" id="value1View" name="param1" >
+
+                                    <label for="value2">Value 2:</label>
+                                    <input type="text" id="value2View" name="param2" value="">
+                                </form>
+                            </div>
+
+                            <div class="parameterSets">
+                                <form>
+
+
+                                    <label for="param1">Parameter 1:</label>
+                                    <input type="text" id="param1View" name="param1" >
+
+                                    <label for="param2">Parameter 2:</label>
+                                    <input type="text" id="param2View" name="param2" value="">
+
+
+                                </form>
+
+                            </div>
+
+                        </div>
+                        <input type="submit" id="saveParameters" value="Save">
+                    </div>
+
+                </div>
+
+            </nav>
+            <form method="post" enctype="multipart/form-data">
+                 <div class="form-group">
+                    <div class="drop-file" id="getInput">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="5em" width="5em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.887 6.2l-.964-.165A2.5 2.5 0 103.5 11H6v1H3.5a3.5 3.5 0 11.59-6.95 5.002 5.002 0 119.804 1.98A2.501 2.501 0 0113.5 12H10v-1h3.5a1.5 1.5 0 00.237-2.981L12.7 7.854l.216-1.028a4 4 0 10-7.843-1.587l-.185.96z"></path>
+                                    <path fill-rule="evenodd" d="M5 8.854a.5.5 0 00.707 0L8 6.56l2.293 2.293A.5.5 0 1011 8.146L8.354 5.5a.5.5 0 00-.708 0L5 8.146a.5.5 0 000 .708z" clip-rule="evenodd"></path>
+                                    <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 6z" clip-rule="evenodd"></path>
+                                </svg>
+                            <p>Drag your files here or click, file size less</p>
+                            <p class="file-size-desc">than 15MB</p>
+                        <input type="file" class="form-control-file" id="fileInput" name="fileInput" style="display:none;">
+                    @*<button >Browse File</button>
+                    <input id="file-input" type="file" style="display:none;">*@
+                        </div>
+                </div>  
+            
+            <div class="files-readyFor-download">
+                
+            </div>
+            </form>
+            <div class="recommended-tools"></div>
+        </section>
+        <section class="file-history">
+            <nav class="history">
+                <p>History</p>
+                <div class="history-dropdown">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div class="file-history-dropdown-content">
+                        <a id="deleteAllHistory" href="#">Delete All</a>
+                    </div>
+                </div>
+                
+                
+            </nav>
+            <span>Today --------------------------</span>
+            <div class="file-history-download">
+                @*<div class="starred">
+                    <span class="material-symbols-outlined starred-file" id="star-icon">
+                        star
+                    </span>
+                </div>*@
+                
+                <p class="history-file-name">test file.csv</p>
+                
+            </div>
+
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
 
 @if (Model != null && Model.DownloadedFile != null)
 {
-    <br />
-    <p>Download the converted file:</p>
-    <a href="@Url.Action("Download", "Home")">@Model.DownloadedFile.FileName</a>
+
+    <script>
+        var convertBtn = document.querySelector('.btn.btn-primary');
+        convertBtn.disabled = true;
+        convertBtn.textContent = 'Downloaded';
+
+        @*var fileNameDiv = document.querySelector('.file-name p');
+        fileNameDiv.textContent = '@Model.DownloadedFile.FileName';*@
+
+    </script>
 }
 
-@if (ViewBag.DownloadedFile != null)
-{
-    <div class="alert alert-success" role="alert">
-        File has been processed. Download modified file: 
-        <a href="@Url.Action("Download", "Home", new { fileName = ViewBag.DownloadedFile.FileName })">@ViewBag.DownloadedFile.FileName</a>
-    </div>
-}
+
 
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
+     
     <script>
+
         $(function () {
             $('#fileInput').change(function () {
                 var input = $(this);
@@ -39,5 +320,6 @@
                 input.parent().find('label').text(label);
             });
         });
+    
     </script>
 }
