@@ -22,7 +22,7 @@ main {
     background: url('/Image/Cool Blues.jpg') no-repeat;
     background-position: center;
     background-size: cover;
-    height: 800px;
+    height: 100vh;
     width: 100%;
 }
 
@@ -89,7 +89,7 @@ span {
 .nav {
     border-right: 1px solid white;
     width: 90%;
-    height: 345px;
+    height: 45%;
     margin-top: 8%;
     color: white;
     background-color: transparent;
@@ -121,7 +121,7 @@ section.file-converter {
     border-radius: 12px;
     background-color: transparent;
     width: 100%;
-    height: 615px;
+    height: 65%;
     margin-top: 1.8rem;
     margin-right: 2rem;
     margin-left: 3rem;
@@ -532,7 +532,7 @@ option {
     border: 1px solid #888;
     border-radius: 12px;
     width: 40%;
-    height: 355px;
+    height: 50%;
     color: white;
 }
 
@@ -614,7 +614,7 @@ option {
     }
 
     #myModalView .modal-content{
-        height: 400px;
+        height: 50%;
     }
 
 .conditionalValues{

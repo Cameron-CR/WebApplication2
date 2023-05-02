@@ -18,7 +18,7 @@ body {
     background: url('/Image/Cool Blues.jpg') no-repeat;
     background-position: center;
     background-size: cover;
-    height: 800px;
+    height: 100vh;
     width: 100%;
     filter: blur(10px);
 }
@@ -69,8 +69,8 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: 75%;
-    height: 550px;
+    width: 65%;
+    height: 50%;
     margin-top: 20px;
     background: url('/Image/Cool Blues.jpg') no-repeat;
     background-position: center;
