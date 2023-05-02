@@ -5,29 +5,47 @@ body {
     padding: 0;
     background-color: whitesmoke;
     font-family: "Montserrat",sans-serif;
+    overflow: hidden;
 }
+
 
 main {
     margin: 0;
     padding: 0;
     background-color: whitesmoke;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     overflow: hidden;
+    background: url('/Image/Cool Blues.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+}
+
+.file-ready-menu{
+    font-size: 1.1rem;
+}
+
+.file-ready-menu:hover {
+    cursor: pointer;
 }
 
 
 a {
-    color: grey;
+    color: white;
     text-decoration: none;
 }
 
+
 li {
     list-style-type: none;
+
 }
+
 
 span {
     font-size: 0.9rem;
@@ -41,17 +59,22 @@ span {
 }
 
 .userInfo {
-    border-radius: 12px;
     background-color: #FFFAFA;
-    width: 85%;
+    width: 60%;
     height: 15rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /*background: url('/Image/Cool Blues.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;*/
+    background-color: transparent;
+    overflow: hidden;
 }
 
 .user-name {
+    color: white;
     font-weight: bold;
     font-size: 1.3rem;
     margin-top: 0.5rem;
@@ -59,25 +82,18 @@ span {
 }
 
 .user-email {
-    color: gray;
+    color: whitesmoke;
 }
 
-.user-image {
-    border: 1pc solid black;
-    background-image: url("../FileConverter/img/B.png");
-    background-size: cover;
-    width: 35%;
-    height: 5.5rem;
-    border-radius: 50%;
-}
 
 .nav {
-    border-radius: 12px;
-    width: 85%;
-    height: 350px;
+    border-right: 1px solid white;
+    width: 60%;
+    height: 345px;
     margin-top: 8%;
-    background-color: #FFFAFA;
-    color: gray;
+    color: white;
+    background-color: transparent;
+    overflow: hidden;
 }
 
     .nav ul {
@@ -87,10 +103,14 @@ span {
         justify-content: space-evenly;
     }
 
+        .nav ul a:hover {
+            color: #f72d7a;
+        }
+
         .nav ul li {
             display: inline-block;
             padding-left: 10px;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
             .nav ul li svg {
@@ -99,11 +119,11 @@ span {
 
 .file-converter {
     border-radius: 12px;
-    background-color: #FFFAFA;
+    background-color: transparent;
     width: 100%;
-    height: 90vh;
-    margin-top: 1.6rem;
-    margin-right: 1.5rem;
+    height: 615px;
+    margin-top: 1.8rem;
+    margin-right: 2rem;
 }
 
     .file-converter nav {
@@ -112,28 +132,41 @@ span {
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
+        margin-bottom: 1%;
     }
 
 .type-conversion-title {
     margin-left: 1.5rem;
     margin-top: 0.5rem;
     font-weight: bold;
+    width: 90%;
+    color: white;
 }
 
+    .type-conversion-title select{
+        width: 18%;
+    }
+
+    type-conversion-title label {
+        font-family: "Montserrat",sans-serif;
+    }
+
 .conversion-parameters {
-    margin-top: 0.5rem;
+    margin-top: 1.2rem;
     margin-right: 1.5rem;
+    color: white;
+
 }
 
 .drop-file {
-    border: 3px dashed #7994de;
+    border: 5px dashed #2294b1;
     border-radius: 12px;
     width: 95%;
     height: 250px;
     margin-left: 1rem;
     background-color: rgba(0,0,0,0);
     transition: border-color 0.2s, background-color 0.2s;
-    background-color: #e4eaf8;
+    background-color: transparent;
     border-radius: 12px;
     height: 251px;
     display: flex;
@@ -150,11 +183,11 @@ span {
 
 
     .drop-file svg {
-        color: #7994de
+        color: whitesmoke;
     }
 
     .drop-file p {
-        color: #7994de
+        color: whitesmoke;
     }
 
 
@@ -172,16 +205,40 @@ p.file-size-desc {
     font-size: 16px;
 }
 
-button:hover {
+input[type="file"] {
+    position: fixed;
+    top: 10%;
+    right: 24.5%;
+    width: 47.5%;
+    height: 150px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    height: 16rem;
+}
+
+input[type="file"] {
+    
+}
+
+.form-group:hover{
     cursor: pointer;
 }
+
+
+    button:hover {
+        cursor: pointer;
+    }
 
 .ready-file {
     width: 95%;
     height: 60px;
     margin-left: 1rem;
     margin-top: .5rem;
-    background-color: whitesmoke;
+    background-color: transparent;
     border-radius: 12px;
     display: flex;
     flex-direction: row;
@@ -195,34 +252,86 @@ button:hover {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    color: #222222;
+    color: white;
+    margin-top: 1%;
 }
 
 .ready-file button {
     padding: 10px 20px;
-    background-color: #8ea6ea;
+    background-color: #f72d7a;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
 }
 
+    .ready-file button:hover {
+        background-color: #c2004c;
+    }
+
 .file-size {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    width: 20%;
+    width: 40%;
+    margin-left: 2%;
+    color: white;
 }
+
+    .file-size p {
+        margin-top: 3%;
+    }
+
+.file-ready-dropdown {
+    position: absolute;
+    top: 51%;
+    left: 74%;
+    z-index: 1;
+    display: none;
+    min-width: 150px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+    .file-ready-dropdown a {
+        display: block;
+        padding: 3px 20px;
+        clear: both;
+        font-weight: 400;
+        line-height: 1.42857143;
+        color: #333;
+        white-space: nowrap;
+    }
+
+        .file-ready-dropdown a:hover,
+        .file-ready-dropdown a:focus {
+            color: #fff;
+            background-color: #337ab7;
+        }
+
+.files-readyFor-download{
+    overflow: scroll;
+    height: 500px;
+}
+
+    .files-readyFor-download::-webkit-scrollbar {
+        display: none;
+    }
 
 
 .file-history {
-    border-radius: 12px;
-    background-color: #FFFAFA;
+    background-color: transparent;
     width: 40%;
-    height: 90vh;
+    height: 91vh;
     margin-top: 2rem;
-    /*margin-right: 1.5rem;*/
+    margin-right: 1.5rem;
 }
 
 .history {
@@ -231,17 +340,299 @@ button:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    
 }
 
     .history p {
         margin-left: 1rem;
-    }
+        margin-top: 5%;
+        color: white;
+        font-size: 1.2rem;    }
 
     .history svg {
         margin-right: 1rem;
+        color: white;
     }
 
 .file-history span {
     margin-left: 1rem;
-    color: grey;
+    color: whitesmoke;
 }
+
+.file-history-download {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2%;
+    padding: 4%;
+    background-color: transparent;
+    border-radius: 7%;
+    overflow: scroll;
+}
+
+    .file-history-download::-webkit-scrollbar{
+        display: none;
+    }
+
+    .file-history-download p {
+        color: white;
+        font-size: 1rem;
+        margin-top: 4%;
+    }
+
+    .file-history-download span {
+        color: white;
+        font-size: 1.6rem;
+    }
+
+    .file-history-download span:hover {
+        cursor: pointer;
+    }
+
+
+#file-type-select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #2294b1;
+    color: white;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+    /*#file-type-select option {
+        font-size: 16px;
+        padding: 6px;
+        background-color: #fff;
+        color: #333;
+    }
+
+        #file-type-select option:hover {
+            background-color: #f2f2f2;
+        }
+
+        #file-type-select option:checked {
+            background-color: #007bff;
+            color: #fff;
+        }*/
+
+select {
+    appearance: none;
+    background-color: #2294b1;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    width: 35%;
+    max-width: 300px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+    select:hover {
+        cursor: pointer;
+    }
+
+    select:focus {
+        outline: none;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+option {
+    color: white;
+    font-size: 16px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    width: 12rem;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+}
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+.file-history-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 2%;
+    z-index: 1;
+    background-color: white;
+
+    width: 10rem;
+}
+
+.history-dropdown:hover .file-history-dropdown-content {
+    display: block;
+}
+
+.file-history-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+    .file-history-dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+.starred-file.clicked {
+    color: darkgoldenrod;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+.modal-content {
+    background: url('/Image/Cool Blues.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 12% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 12px;
+    width: 40%;
+    height: 355px;
+    color: white;
+}
+
+    .modal-content input{
+        border-radius: 7px;
+        text-indent: 2%;
+    }
+
+    .titleHeaders {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-content: center;
+        margin-top: 2%;
+    }
+
+.valueSets{
+    margin-bottom: 2%;
+}
+
+    .valueSets input{
+        margin-right: 15%;
+    }
+    .valueSets label {
+        margin-right: 15%;
+    }
+
+
+    .parameterSets {
+        margin-top: 0.5%;
+    }
+
+.parameterInputValues {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+    .modal-content form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+        .modal-content input{
+            width: 60%;
+        }
+
+#saveParameters {
+    width: 25%;
+    margin-left: 35%;
+    margin-top: 5%;
+    background-color: #f72d7a;
+    color: white;
+    border: none;
+}
+
+    
+
+    #paramName {
+        width: 30%;
+    }
+
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #f72d7a;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #myModalView .modal-content{
+        height: 400px;
+    }
+
+.conditionalValues{
+    width: 20%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.conditionalValues select{
+    width: 40%;
+    margin-left: 60%;
+    font-size: 1.2rem;
+}
+.conditionalValues select option{ 
+    font-size: 1.8rem;
+}
+
+
+
+

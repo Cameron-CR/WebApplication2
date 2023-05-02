@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Linq;
 
+
 namespace WebApplication2.Controllers
 {
     public class HomeController : Controller
@@ -20,6 +21,7 @@ namespace WebApplication2.Controllers
         {
             return View();
         }
+
 
         [HttpPost]
         public IActionResult Index(IFormFile fileInput)
