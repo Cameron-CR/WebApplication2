@@ -60,7 +60,7 @@ span {
 
 .userInfo {
     background-color: #FFFAFA;
-    width: 60%;
+    width: 90%;
     height: 15rem;
     display: flex;
     flex-direction: column;
@@ -88,7 +88,7 @@ span {
 
 .nav {
     border-right: 1px solid white;
-    width: 60%;
+    width: 90%;
     height: 345px;
     margin-top: 8%;
     color: white;
@@ -124,6 +124,7 @@ section.file-converter {
     height: 615px;
     margin-top: 1.8rem;
     margin-right: 2rem;
+    margin-left: 3rem;
 }
 
     .file-converter nav {
