@@ -53,7 +53,7 @@ span {
 
 
 .nav-and-userInfo {
-    width: 50%;
+    width: 30%;
     height: 100%;
     padding: 2%;
 }
@@ -117,7 +117,7 @@ span {
                 margin-right: 0.5rem;
             }
 
-.file-converter {
+section.file-converter {
     border-radius: 12px;
     background-color: transparent;
     width: 100%;
