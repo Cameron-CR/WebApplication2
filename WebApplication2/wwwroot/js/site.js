@@ -839,22 +839,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    document.getElementById("viewParameters").addEventListener('click', function () {
-        document.getElementById("myModalView").style.display = "block"
+    //document.getElementById("viewParameters").addEventListener('click', function () {
+    //    document.getElementById("myModalView").style.display = "block"
 
-        var select = document.getElementById("parameter-type-view");
-
-
-        var parameters = JSON.parse(localStorage.getItem("parameters"));
+    //    var select = document.getElementById("parameter-type-view");
 
 
-        for (var i = 0; i < parameters.length; i++) {
-            var option = document.createElement("option");
-            option.text = parameters[i].id;
-            option.value = parameters[i].id;
-            select.add(option);
-        }
-    })
+    //    var parameters = JSON.parse(localStorage.getItem("parameters"));
+
+
+    //    for (var i = 0; i < parameters.length; i++) {
+    //        var option = document.createElement("option");
+    //        option.text = parameters[i].id;
+    //        option.value = parameters[i].id;
+    //        select.add(option);
+    //    }
+    //})
 
     //var selectedParamId = document.getElementById("parameter-type-view").value;
     //var parameters = JSON.parse(localStorage.getItem("parameters"));
