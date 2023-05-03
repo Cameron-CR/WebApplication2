@@ -100,11 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
             var fileReadyDropdown = document.createElement('div');
             fileReadyDropdown.classList.add('file-ready-dropdown');
 
-            var setParamTab = document.createElement('a');
-            setParamTab.textContent = 'Set New Parameter';
-            setParamTab.href = '#';
-            fileReadyDropdown.appendChild(setParamTab);
-
             var convertAgainTab = document.createElement('a');
             convertAgainTab.textContent = 'Convert Again';
             convertAgainTab.href = '#';
@@ -325,11 +320,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             var fileReadyDropdown = document.createElement('div');
             fileReadyDropdown.classList.add('file-ready-dropdown');
-
-            var setParamTab = document.createElement('a');
-            setParamTab.textContent = 'Set New Parameter';
-            setParamTab.href = '#';
-            fileReadyDropdown.appendChild(setParamTab);
 
             var convertAgainTab = document.createElement('a');
             convertAgainTab.textContent = 'Convert Again';
