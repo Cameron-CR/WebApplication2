@@ -58,7 +58,7 @@
                     </a>
                     <a href="#">
                     <li>
-                       
+
                     </li>
                     </a>
 
@@ -86,7 +86,7 @@
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M16 13L16 11 7 11 7 8 2 12 7 16 7 13z"></path><path d="M20,3h-9C9.897,3,9,3.897,9,5v4h2V5h9v14h-9v-4H9v4c0,1.103,0.897,2,2,2h9c1.103,0,2-0.897,2-2V5C22,3.897,21.103,3,20,3z"></path></svg>
                         Logout
                     </li>
-                    
+
                     </a>
                 </ul>
             </div>
@@ -105,7 +105,6 @@
                     </select>
                     <label for="file-type">with Parameter Set:</label>
                     <select id="parameter-type">
-                        
                     </select>
                 </div>
                 <div class="dropdown">
@@ -115,7 +114,6 @@
                         </svg>
                     </div>
                     <div class="dropdown-content">
-                        <a href="#" id="viewParameters">View Parameters</a>
                         <a href="#" id="setParameters">Add Parameters</a>
                         <a id="convertAll" href="#">Convert All</a>
                         <a id="deleteAll" href="#">Delete All</a>
@@ -130,87 +128,38 @@
                         <label for="paramName">Set Name:</label>
                         <input type="text" id="paramName" name="paramName" value="">
                         <div class="titleHeaders">
-                                <h3>Values</h3>
-                            <h3>to</h3>
-                            <h3>Parameters</h3>
-                            </div>
-                        <div class="parameterInputValues">    
-                            
-                        <div class="conditionalValues">
-                            <select class="conditional-type-value1">
-                                <option value="greaterThan">&gt;</option>
-                                <option value="lessThan">&lt;</option>
-                                <option value="greaterOrEqual">&ge;</option>
-                                <option value="lessOrEqual">&le;</option>
-                                <option value="equal">=</option>
-                            </select>
-
-                             <select class="conditional-type-value2">
-                                <option value="greaterThan">&gt;</option>
-                                <option value="lessThan">&lt;</option>
-                                <option value="greaterOrEqual">&ge;</option>
-                                <option value="lessOrEqual">&le;</option>
-                                <option value="equal">=</option>
-                            </select>
+                            <h3>Values to Parameters</h3>
                         </div>
-                        
-                        <div class="valueSets">
-                            <form>
-                                
 
-                                <label for="value1">Value 1:</label>
-                                <input type="text" id="value1" name="param1" value="">
-
-                                <label for="value2">Value 2:</label>
-                                <input type="text" id="value2" name="param2" value="">
-                            </form>
-                        </div>
-                        
-                        <div class="parameterSets">
-                        <form>
-                            
-
-                            <label for="param1">Parameter 1:</label>
-                            <input type="text" id="param1" name="param1" value="">
-
-                            <label for="param2">Parameter 2:</label>
-                            <input type="text" id="param2" name="param2" value="">
-
-                            
-                        </form>
-                            
-                        </div>
-                        
-                        </div>
-                        <input type="submit" id="saveParameters" value="Save">
-                    </div>
-
-                </div>
-
-                <div id="myModalView" class="modal">
-
-                    <!-- Modal content -->
-                    <div class="modal-content" id="viewParameter">
-                        <span class="close">&times;</span>
-                        <label for="paramName">Set Name:</label>
-                        <select id="parameter-type-view">
-                        </select>
-                        <div class="titleHeaders">
-                            <h3>Values</h3>
-                            <h3>to</h3>
-                            <h3>Parameters</h3>
-                        </div>
                         <div class="parameterInputValues">
+
+                            <div class="conditionalValues">
+                                <select class="conditional-type-value1">
+                                    <option value="greaterThan">&gt;</option>
+                                    <option value="lessThan">&lt;</option>
+                                    <option value="greaterOrEqual">&ge;</option>
+                                    <option value="lessOrEqual">&le;</option>
+                                    <option value="equal">=</option>
+                                </select>
+
+                                <select class="conditional-type-value2">
+                                    <option value="greaterThan">&gt;</option>
+                                    <option value="lessThan">&lt;</option>
+                                    <option value="greaterOrEqual">&ge;</option>
+                                    <option value="lessOrEqual">&le;</option>
+                                    <option value="equal">=</option>
+                                </select>
+                            </div>
 
                             <div class="valueSets">
                                 <form>
 
 
                                     <label for="value1">Value 1:</label>
-                                    <input type="text" id="value1View" name="param1" >
+                                    <input type="text" id="value1" name="param1" value="">
 
                                     <label for="value2">Value 2:</label>
-                                    <input type="text" id="value2View" name="param2" value="">
+                                    <input type="text" id="value2" name="param2" value="">
                                 </form>
                             </div>
 
@@ -219,10 +168,10 @@
 
 
                                     <label for="param1">Parameter 1:</label>
-                                    <input type="text" id="param1View" name="param1" >
+                                    <input type="text" id="param1" name="param1" value="">
 
                                     <label for="param2">Parameter 2:</label>
-                                    <input type="text" id="param2View" name="param2" value="">
+                                    <input type="text" id="param2" name="param2" value="">
 
 
                                 </form>
@@ -235,26 +184,27 @@
 
                 </div>
 
+              
+
             </nav>
             <form method="post" enctype="multipart/form-data">
-                 <div class="form-group">
+                <div class="form-group">
                     <div class="drop-file" id="getInput">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="5em" width="5em" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.887 6.2l-.964-.165A2.5 2.5 0 103.5 11H6v1H3.5a3.5 3.5 0 11.59-6.95 5.002 5.002 0 119.804 1.98A2.501 2.501 0 0113.5 12H10v-1h3.5a1.5 1.5 0 00.237-2.981L12.7 7.854l.216-1.028a4 4 0 10-7.843-1.587l-.185.96z"></path>
-                                    <path fill-rule="evenodd" d="M5 8.854a.5.5 0 00.707 0L8 6.56l2.293 2.293A.5.5 0 1011 8.146L8.354 5.5a.5.5 0 00-.708 0L5 8.146a.5.5 0 000 .708z" clip-rule="evenodd"></path>
-                                    <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 6z" clip-rule="evenodd"></path>
-                                </svg>
-                            <p>Drag your files here or click, file size less</p>
-                            <p class="file-size-desc">than 15MB</p>
+                            <path d="M4.887 6.2l-.964-.165A2.5 2.5 0 103.5 11H6v1H3.5a3.5 3.5 0 11.59-6.95 5.002 5.002 0 119.804 1.98A2.501 2.501 0 0113.5 12H10v-1h3.5a1.5 1.5 0 00.237-2.981L12.7 7.854l.216-1.028a4 4 0 10-7.843-1.587l-.185.96z"></path>
+                            <path fill-rule="evenodd" d="M5 8.854a.5.5 0 00.707 0L8 6.56l2.293 2.293A.5.5 0 1011 8.146L8.354 5.5a.5.5 0 00-.708 0L5 8.146a.5.5 0 000 .708z" clip-rule="evenodd"></path>
+                            <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 6z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p>Drag your files here or click, file size less</p>
+                        <p class="file-size-desc">than 15MB</p>
                         <input type="file" class="form-control-file" id="fileInput" name="fileInput" style="display:none;">
-                    @*<button >Browse File</button>
-                    <input id="file-input" type="file" style="display:none;">*@
-                        </div>
-                </div>  
-            
-            <div class="files-readyFor-download">
-                
-            </div>
+                        @*<button >Browse File</button>
+                        <input id="file-input" type="file" style="display:none;">*@
+                    </div>
+                </div>
+
+                <div class="files-readyFor-download">
+                </div>
             </form>
             <div class="recommended-tools"></div>
         </section>
@@ -269,19 +219,19 @@
                         <a id="deleteAllHistory" href="#">Delete All</a>
                     </div>
                 </div>
-                
-                
+
+
             </nav>
             <span>Today --------------------------</span>
             <div class="file-history-download">
                 @*<div class="starred">
-                    <span class="material-symbols-outlined starred-file" id="star-icon">
-                        star
-                    </span>
+                <span class="material-symbols-outlined starred-file" id="star-icon">
+                star
+                </span>
                 </div>*@
-                
+
                 <p class="history-file-name">test file.csv</p>
-                
+
             </div>
 
         </section>
@@ -308,9 +258,9 @@
 
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-     
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+
     <script>
 
         $(function () {
@@ -320,6 +270,6 @@
                 input.parent().find('label').text(label);
             });
         });
-    
+
     </script>
 }
